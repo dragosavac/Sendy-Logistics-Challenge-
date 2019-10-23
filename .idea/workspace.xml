@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1fe1a78-fe4f-47c0-8478-3933c32ba56a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Data_preparation_train_data-checkpoint-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data_preparation_train_data-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing.py" afterDir="false" />
-    </list>
+    <list default="true" id="b1fe1a78-fe4f-47c0-8478-3933c32ba56a" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,10 +107,11 @@
       <path value="$PROJECT_DIR$/MLenv/lib/python3.7/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="730" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="2100" />
+    <option name="y" value="78" />
+    <option name="width" value="1440" />
+    <option name="height" value="830" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -204,7 +200,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="0" width="2560" height="1080" extended-state="0" />
+    <frame x="2100" y="78" width="1440" height="830" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -212,8 +208,8 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32976654" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.37548637" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21132812" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.51058203" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.37569445" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />

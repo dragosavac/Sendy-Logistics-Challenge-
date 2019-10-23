@@ -38,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Data_preparation_train_data-checkpoint-checkpoint.ipynb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Data_preparation_train_data-checkpoint-checkpoint.ipynb">
+      <file leaf-file-name="Data_preparation_train_data-checkpoint.ipynb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Data_preparation_train_data-checkpoint.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
-              <selected id="9" />
+              <selected id="17" />
             </state>
           </provider>
         </entry>
@@ -93,6 +93,7 @@
       <list>
         <option value="$PROJECT_DIR$/data_preprocessing.py" />
         <option value="$PROJECT_DIR$/Data_preparation_train_data-checkpoint-checkpoint.ipynb" />
+        <option value="$PROJECT_DIR$/Data_preparation_train_data-checkpoint.ipynb" />
       </list>
     </option>
   </component>
@@ -517,13 +518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Data_preparation_train_data-checkpoint.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.ipynb_checkpoints/Data_preparation_test_data-checkpoint.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
@@ -663,10 +657,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Data_preparation_train_data-checkpoint-checkpoint.ipynb">
+    <entry file="file://$PROJECT_DIR$/Data_preparation_train_data-checkpoint.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
-          <selected id="9" />
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data_preparation_train_data-checkpoint.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="17" />
         </state>
       </provider>
     </entry>

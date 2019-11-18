@@ -1,6 +1,11 @@
 import pandas as pd
+from sklearn.metrics import mean_squared_error
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GridSearchCV
+
+
 
 
 riders_data = pd.read_csv('Data/Riders.csv')
@@ -93,7 +98,7 @@ train_with_rider_info.drop(columns=['Confirmation - Day of Month', 'Confirmation
 test_with_rider_info.drop(columns=['Confirmation - Day of Month', 'Confirmation - Weekday (Mo = 1)',
                                    'Arrival at Pickup - Day of Month', 'Arrival at Pickup - Weekday (Mo = 1)',
                                    'Pickup - Day of Month', 'Pickup - Weekday (Mo = 1)',
-                                   'Vehicle Type', 'Order No',
+                                   'Vehicle Type',
                                    'User Id', 'Rider Id',
                                    'Precipitation in millimeters'], inplace=True)
 
@@ -111,4 +116,51 @@ train_with_rider_info.rename(columns={'Placement - Day of Month': 'Day of Month'
 
 test_with_rider_info.rename(columns={'Placement - Day of Month': 'Day of Month',
                                      'Placement - Weekday (Mo = 1)': 'Weekday (Mo = 1)'})
+
+X = train_with_rider_info.drop(columns='Time from Pickup to Arrival')
+Y = train_with_rider_info['Time from Pickup to Arrival']
+
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_state=0)
+
+
+regressor = RandomForestRegressor(n_estimators=180, max_depth=110,
+                                  max_features=3, min_samples_leaf=3,
+                                  min_samples_split=8,
+                                  random_state=0)
+regressor.fit(X_train, y_train)
+y_pred = regressor.predict(X_test)
+
+grid_param = {
+    'n_estimators': [150, 160, 170, 180],
+    'max_depth': [80, 90, 100, 110],
+    'max_features': [2, 3],
+    'min_samples_leaf': [3, 4, 5],
+    'min_samples_split': [8, 10, 12],
+}
+
+gd_sr = GridSearchCV(
+    estimator=RandomForestRegressor(),
+    param_grid=grid_param,
+    scoring='neg_mean_absolute_error',
+    cv=4,
+    n_jobs=-1)
+
+gd_sr.fit(X_train, y_train)
+
+best_parameters = gd_sr.best_params_
+
+
+final_predict = regressor.predict(test_with_rider_info.drop(columns='Order No'))
+test_with_rider_info['Time from Pickup to Arrival'] = final_predict
+
+submission = test_with_rider_info[['Order No','Time from Pickup to Arrival' ]]
+submission['Time from Pickup to Arrival'] = submission['Time from Pickup to Arrival'].astype(int)
+submission.to_csv('/Users/rade_dragosavac/PycharmProjects/SendyLogisticsChallenge /Data/Submission.csv', index=False)
+
+
+
+
+
+
+
 

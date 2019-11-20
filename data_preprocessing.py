@@ -1,11 +1,10 @@
 import pandas as pd
 from sklearn.metrics import mean_squared_error
+import numpy as np
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import GridSearchCV
-
-
 
 
 riders_data = pd.read_csv('Data/Riders.csv')
@@ -24,6 +23,34 @@ def delta_time(dataset, higher_time, lower_time):
 
 def average(list_data):
     return sum(list_data)/len(list_data)+1
+
+
+def time_to_day_part(time):
+    hours = time/3600
+    if hours < 6:
+        return 'night'
+    if hours < 12:
+        return 'morning'
+    if hours < 18:
+        return 'afternoon'
+    else:
+        return 'evening'
+
+
+def calculate_bearing(lat1, lng1, lat2, lng2):
+    lat1 = np.deg2rad(lat1)
+    lat2 = np.deg2rad(lat2)
+    diffLong = np.deg2rad(lng2 - lng1)
+    x = np.sin(diffLong) * np.cos(lat2)
+    y = np.cos(lat1) * np.sin(lat2) - (np.sin(lat1)
+                                       * np.cos(lat2) * np.cos(diffLong))
+    initial_bearing = np.arctan2(x, y)
+    # Now we have the initial bearing but math.atan2 return values
+    # from -180° to + 180° which is not what we want for a compass bearing
+    # The solution is to normalize the initial bearing as shown below
+    initial_bearing = np.rad2deg(initial_bearing)
+    compass_bearing = (initial_bearing + 360) % 360
+    return compass_bearing
 
 
 # converting time in seconds from midnight for train data
